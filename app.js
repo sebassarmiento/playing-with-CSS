@@ -4,6 +4,7 @@ let ball = true
 let spinner = true
 let loader = true
 let bar = true
+let card = true
 
 $('.show-box-btn').on('click', () => {
     $('.box').toggleClass('hidden')
@@ -27,13 +28,41 @@ $('.show-ball-btn').on('click', () => {
 
 $('.show-spinner-btn').on('click', () => {
     $('.spinner').toggleClass('hidden')
+    if(spinner){
+        $('.show-spinner-btn').html('Hide spinner')
+    } else {
+        $('.show-spinner-btn').html('Show spinner')
+    }
+    spinner = !spinner
 })
 
 $('.show-loader-btn').on('click', () => {
     $('.loader').toggleClass('hidden')
+    if(loader){
+        $('.show-loader-btn').html('Hide loader')
+    } else {
+        $('.show-loader-btn').html('Show loader')
+    }
+    loader = !loader
 })
 
 $('.show-bar-btn').on('click', () => {
     $('.bar').toggleClass('hidden')
     $('.progress').toggleClass('hidden')
+    if(bar){
+        $('.show-bar-btn').html('Hide progress bars')
+    } else {
+        $('.show-bar-btn').html('Show progress bars')
+    }
+    bar = !bar
+})
+
+$('.show-card-btn').on('click', () => {
+    $('.card').toggleClass('hidden')
+    if(card){
+        $('.show-card-btn').html('Hide card')
+    } else {
+        $('.show-card-btn').html('Show card')
+    }
+    card = !card
 })
