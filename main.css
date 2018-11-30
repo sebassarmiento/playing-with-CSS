@@ -1,0 +1,460 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 12px;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-rows: 300px;
+}
+
+
+/* SHOW BOX */
+
+.main-container{
+    width: 100%;
+    padding: 0;
+    background-color: rgb(107, 161, 207);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 12px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: rgba(177, 98, 62, 0.904);
+    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    transform: translate(0px) rotate(90deg);
+    transform-origin: top left;
+    z-index: 1;
+    position: absolute;
+}
+
+.box.hidden{
+    opacity: 1;
+    transform: translate(100px, 100px); 
+}
+
+.show-box-btn:focus{
+    outline: none;
+}
+
+.show-box-btn{
+    background-color: cadetblue;
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 4px;
+    color: rgba(0, 0, 0, 0.829);
+    transition: all 300ms;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.363);
+}
+
+.show-box-btn:hover{
+    transform: translate(0px, -2px);
+    cursor: pointer;
+}
+
+/* DROP DOWN MENU */
+
+.dropdown-menu{
+    background-color: rgb(111, 111, 189);
+    padding: 12px;
+}
+
+.dropdown-menu .title{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 100;
+    margin: 0px;
+    padding: 12px;
+    background-color: rgba(247, 68, 68, 0.438);
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.363);
+    border-radius: 2px;
+}
+
+.dropdown-menu ul{
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li{
+    background-color: rgba(0, 0, 0, 0.466);
+    margin: 0;
+    padding: 12px;
+    box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.363);
+    width: 100%;
+    opacity: 0;
+    list-style: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    transition: all 1s ease-in-out;
+    transform: translate(100px) rotateY(90deg);
+}
+
+.dropdown-menu:hover ul li:nth-child(1){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 0.2s;
+}
+
+.dropdown-menu:hover ul li:nth-child(2){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 0.4s;
+}
+
+.dropdown-menu:hover ul li:nth-child(3){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 0.6s;
+}
+
+.dropdown-menu:hover ul li:nth-child(4){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 0.8s;
+}
+
+.dropdown-menu:hover ul li:nth-child(5){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 1s;
+}
+
+.dropdown-menu:hover ul li:nth-child(6){
+    background-color: green;
+    opacity: 1;
+    transform: translate(0px) rotateY(0);
+    transition-delay: 1.2s;
+}
+
+/* BALL CONTAINER */
+
+.ball-container{
+    background-color: rgba(168, 30, 30, 0.678);
+    padding: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.show-ball-btn:focus{
+    outline: none;
+}
+
+.show-ball-btn{
+    background-color: rgb(197, 104, 75);
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.925);
+    transition: all 300ms;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.363);
+}
+
+.show-ball-btn:hover{
+    transform: translate(0px, -2px);
+    cursor: pointer;
+}
+
+.ball{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(232, 245, 60);
+    border-radius: 50%;
+    transition: all 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+    animation: showBall 1s ease-out infinite;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    opacity: 1;
+}
+
+@keyframes showBall{
+    0%, 100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+}
+
+.ball.hidden{
+    opacity: 0;
+}
+
+/* SHOW SPINNER */
+
+.spinner-container{
+    background-color: rgba(216, 216, 33, 0.808);
+    padding: 12px;
+    position: relative;
+    height: 300px;
+}
+
+.show-spinner-btn:focus{
+    outline: none;
+}
+
+.show-spinner-btn{
+    background-color: rgba(211, 67, 23, 0.842);
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.925);
+    transition: all 300ms;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.363);
+}
+
+.show-spinner-btn:hover{
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.spinner.hidden{
+    opacity: 0;
+}
+
+.spinner{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: transparent;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    border-radius: 50%;
+    border: 5px solid rgba(0, 0, 0, 0.89);
+    border-top-color: rgba(255, 255, 255, 0.281);
+    animation: spinner 1s ease-in-out infinite;
+    transition: all 1s;
+    opacity: 1;
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* SHOW LOADER */
+
+.loader-container{
+    background-color: rgba(25, 199, 199, 0.795);
+    padding: 12px;
+    position: relative;
+}
+
+.show-loader-btn:focus{
+    outline: none;
+}
+
+.show-loader-btn{
+    background-color: rgba(13, 155, 20, 0.842);
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.925);
+    transition: all 300ms;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.363);
+}
+
+.show-loader-btn:hover{
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.loader{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    background-color: crimson;
+    opacity: 1;
+    transition: all 1s;
+    border-radius: 50%;
+    animation: loader 1s ease-in-out infinite;
+}
+
+@keyframes loader {
+    0%, 100%{
+        transform: scale(0);
+        opacity: 0;
+        background: rgb(235, 70, 235);
+    }
+    50%{
+        transform: scale(1);
+        opacity: 1;
+        background-color: rgb(129, 6, 245);
+    }
+}
+
+.loader.hidden{
+    visibility: hidden;
+}
+
+/* PROGRESS BAR */
+
+.progress-bar-container{
+    background-color: rgba(199, 25, 112, 0.795);
+    padding: 12px;
+    position: relative;
+}
+
+.show-bar-btn:focus{
+    outline: none;
+}
+
+.show-bar-btn{
+    background-color: rgba(51, 177, 118, 0.842);
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin: 0px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 0.925);
+    transition: all 300ms;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.363);
+}
+
+.show-bar-btn:hover{
+    transform: translateY(-4px);
+    cursor: pointer;
+}
+
+.bar{
+    width: 100%;
+    height: 20px;
+    background-color: aliceblue;
+    top: calc(50% - 10px);
+    left: calc(50% - 150px);
+    border-radius: 4px;
+    padding: 2px;
+    margin-top: 30px;
+    transition: all 1s;
+}
+
+.progress{
+    margin-top: 30px;
+    width: 290px;
+    height: 16px;
+    top: calc(50% - 145px);
+    left: calc(50% - 9px);
+    background-color: red;
+    z-index: 10;
+    border-radius: 4px;
+    margin: 0;
+    transition: all 1s;
+    animation: bar1 4s ease-in-out infinite;
+}
+
+@keyframes bar1{
+    0%{
+        width: 0%;
+    }
+    30%{
+        width: 40%;
+    }
+    50%{
+        width: 50%;
+    }
+    70%{
+        width: 95%;
+    }
+    80%{
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.bar.hidden{
+    opacity: 0;
+}
+
+.progress.hidden{
+    opacity: 0;
+}
+
+.two .progress{
+    background-color: green;
+    animation: bar2 8s ease-in-out infinite;
+}
+
+.three .progress{
+    background-color: aqua;
+    animation: bar3 3s ease-in-out infinite;
+}
+
+.four .progress{
+    background-color: blueviolet;
+    animation: bar4 6s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes bar2{
+    0%{
+        width: 0%;
+    }
+    10%{
+        width: 50%;
+    }
+    50%{
+        width: 95%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes bar3{
+    0%{
+        width: 0%;
+    }
+    60%{
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes bar4{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
