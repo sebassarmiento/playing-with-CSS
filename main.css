@@ -502,6 +502,7 @@ body{
     transition: all 1s;
     perspective: 1000px;
     transform-style: preserve-3d;
+    transform-origin: top;
 }
 
 .card:hover{
