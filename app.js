@@ -38,6 +38,7 @@ $('.show-spinner-btn').on('click', () => {
 
 $('.show-loader-btn').on('click', () => {
     $('.loader').toggleClass('hidden')
+    $('.loader-2').toggleClass('hidden')
     if(loader){
         $('.show-loader-btn').html('Hide loader')
     } else {
