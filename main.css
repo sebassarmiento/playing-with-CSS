@@ -100,50 +100,49 @@ body{
     color: white;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    transition: all 1s ease-in-out;
+    transition: all 0.6s ease-in-out;
     transform: translate(100px) rotateY(90deg);
 }
 
+.dropdown-menu ul li:hover{
+    cursor: pointer;
+}
+
 .dropdown-menu:hover ul li:nth-child(1){
-    background-color: green;
+    background-color: rgba(11, 202, 11, 0.795);
     opacity: 1;
     transform: translate(0px) rotateY(0);
     transition-delay: 0.2s;
 }
 
 .dropdown-menu:hover ul li:nth-child(2){
-    background-color: green;
+    background-color: rgba(11, 202, 11, 0.795);
     opacity: 1;
     transform: translate(0px) rotateY(0);
     transition-delay: 0.4s;
 }
 
 .dropdown-menu:hover ul li:nth-child(3){
-    background-color: green;
+    background-color: rgba(11, 202, 11, 0.795);
     opacity: 1;
     transform: translate(0px) rotateY(0);
     transition-delay: 0.6s;
 }
 
 .dropdown-menu:hover ul li:nth-child(4){
-    background-color: green;
+    background-color: rgba(11, 202, 11, 0.795);
     opacity: 1;
     transform: translate(0px) rotateY(0);
     transition-delay: 0.8s;
 }
 
 .dropdown-menu:hover ul li:nth-child(5){
-    background-color: green;
+    background-color: rgba(11, 202, 11, 0.795);
     opacity: 1;
     transform: translate(0px) rotateY(0);
     transition-delay: 1s;
-}
-
-.dropdown-menu:hover ul li:nth-child(6){
-    background-color: green;
-    opacity: 1;
-    transform: translate(0px) rotateY(0);
-    transition-delay: 1.2s;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 /* BALL CONTAINER */
@@ -193,10 +192,10 @@ body{
 
 @keyframes showBall{
     0%, 100%{
-        transform: translateY(0px);
+        transform: translateY(-20px);
     }
     50%{
-        transform: translateY(100px);
+        transform: translateY(60px);
     }
 }
 
@@ -299,7 +298,7 @@ body{
     position: absolute;
     top: calc(50% - 50px);
     left: calc(50% - 50px);
-    background-color: crimson;
+    background-color: orangered;
     opacity: 1;
     transition: all 1s;
     border-radius: 50%;
@@ -312,7 +311,7 @@ body{
     position: absolute;
     top: calc(50% - 50px);
     left: calc(50% - 50px);
-    background-color: rgb(20, 50, 220);
+    background-color: rgb(185, 49, 0);
     opacity: 1;
     transition: all 1s;
     border-radius: 50%;
@@ -327,12 +326,10 @@ body{
     0%, 100%{
         transform: scale(0);
         opacity: 0;
-        background: rgb(235, 70, 235);
     }
     50%{
         transform: scale(1);
         opacity: 1;
-        background-color: rgb(129, 6, 245);
     }
 }
 
@@ -428,16 +425,19 @@ body{
 .two .progress{
     background-color: green;
     animation: bar2 8s ease-in-out infinite;
+    transition-delay: 0.25s
 }
 
 .three .progress{
     background-color: aqua;
     animation: bar3 3s ease-in-out infinite;
+    transition-delay: 0.5s
 }
 
 .four .progress{
     background-color: blueviolet;
     animation: bar4 6s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    transition-delay: 0.75s
 }
 
 @keyframes bar2{
