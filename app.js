@@ -5,6 +5,7 @@ let spinner = true
 let loader = true
 let bar = true
 let card = true
+let buffer = true
 
 $('.show-box-btn').on('click', () => {
     $('.box').toggleClass('hidden')
@@ -66,4 +67,14 @@ $('.show-card-btn').on('click', () => {
         $('.show-card-btn').html('Show card')
     }
     card = !card
+})
+
+$('.show-buffer-btn').on('click', () => {
+    $('.buffer').toggleClass('hidden')
+    if(buffer){
+        $('.show-buffer-btn').html('Hide buffer')
+    } else {
+        $('.show-buffer-btn').html('Show buffer')
+    }
+    buffer = !buffer
 })
